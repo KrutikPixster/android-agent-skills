@@ -6,6 +6,7 @@ A discovery catalog for the canonical Android skills in this repository.
 - Codex / open standard: root `skills/` plus this `AGENTS.md` catalog.
 - Claude Code: generated `.claude/agents/` files.
 - Cursor: generated `.cursor/rules/` files.
+- GitHub Copilot / workspace agents: generated `.github/skills/` skill mirrors.
 
 ## Foundations
 - `android-architecture-clean`: Apply clean architecture boundaries, use cases, repositories, and lifecycle-aware presentation models in Android projects. Path: `skills/android-architecture-clean`
@@ -22,12 +23,14 @@ A discovery catalog for the canonical Android skills in this repository.
 - `android-ui-states-validation`: Review Android UI flows for empty, loading, error, offline, and edge-case behavior before release. Path: `skills/android-ui-states-validation`
 
 ## UI Systems
+- `android-coil-compose`: Use Coil in Jetpack Compose with AsyncImage, painter variants, sizing, and accessible image loading patterns. Path: `skills/android-coil-compose`
 - `android-compose-accessibility`: Make Compose interfaces accessible with semantics, announcements, contrast, focus order, and adaptive touch targets. Path: `skills/android-compose-accessibility`
 - `android-compose-foundations`: Build Android UI with Jetpack Compose foundations, layouts, modifiers, theming, and stable component structure. Path: `skills/android-compose-foundations`
 - `android-compose-performance`: Profile and improve Compose recomposition, layout, scrolling, startup, and rendering performance in Android apps. Path: `skills/android-compose-performance`
 - `android-compose-state-effects`: Manage Compose state, remember APIs, side effects, snapshots, and lifecycle-aware collection without leaks or loops. Path: `skills/android-compose-state-effects`
 - `android-compose-xml-interoperability`: Bridge Compose and the View system safely during incremental migrations, interoperability screens, and shared theming. Path: `skills/android-compose-xml-interoperability`
 - `android-material3-design-system`: Apply Material 3 tokens, color, type, spacing, adaptive components, and theme ownership in Android apps. Path: `skills/android-material3-design-system`
+- `android-mobile-frontend-design`: Design Android mobile frontend experiences from scratch, improve existing screens, and fix UI issues with brand-forward, localization-safe, overflow-safe guidance across Compose and Views. Path: `skills/android-mobile-frontend-design`
 - `android-viewsystem-foundations`: Handle XML layouts, ConstraintLayout, Fragments, ViewBinding, DataBinding, and classic Android UI lifecycle patterns. Path: `skills/android-viewsystem-foundations`
 
 ## Data And Platform
@@ -40,10 +43,13 @@ A discovery catalog for the canonical Android skills in this repository.
 
 ## Quality And Delivery
 - `android-ci-cd-release-playstore`: Automate Android CI, versioning, signing boundaries, release channels, and Play-ready delivery workflows. Path: `skills/android-ci-cd-release-playstore`
+- `android-emulator-automation`: Use semantic ADB and UIAutomator workflows to inspect, launch, and interact with Android apps from agents. Path: `skills/android-emulator-automation`
+- `android-gradle-build-performance`: Diagnose and improve Android and Gradle build performance with scans, cache checks, and bottleneck audits. Path: `skills/android-gradle-build-performance`
 - `android-performance-observability`: Measure startup, rendering, memory, jank, vitals, logs, and crash signals for Android apps with actionable traces. Path: `skills/android-performance-observability`
 - `android-security-best-practices`: Apply Android app security guidance around secrets, storage, network trust, exported components, and least privilege. Path: `skills/android-security-best-practices`
-- `android-testing-ui`: Validate Android UI behavior with Compose UI tests, Espresso-style checks, accessibility assertions, and state coverage. Path: `skills/android-testing-ui`
+- `android-testing-ui`: Validate Android UI behavior with Compose UI tests, Espresso-style checks, screenshot assertions, and accessibility verification. Path: `skills/android-testing-ui`
 - `android-testing-unit`: Write fast, focused Android unit tests for reducers, use cases, repositories, and lifecycle-safe state holders. Path: `skills/android-testing-unit`
 
 ## Legacy Rescue
 - `android-modernization-upgrade`: Bring very old Android projects to a current supported baseline with staged upgrades, deprecated API replacement, 16 KB alignment checks, and explicit handoff to specialized skills. Path: `skills/android-modernization-upgrade`
+- `android-rxjava-to-coroutines-migration`: Migrate Android RxJava code to Kotlin coroutines and Flow with safe lifecycle-aware replacements. Path: `skills/android-rxjava-to-coroutines-migration`

@@ -3,12 +3,16 @@ package dev.androidagentskills.orbittasks.compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
@@ -22,10 +26,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 
 data class TaskUiModel(val title: String, val status: String)
 
@@ -37,7 +45,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun OrbitTasksApp() {
+fun OrbitTasksApp() {
     val tasks = listOf(
         TaskUiModel("Prepare beta release notes", "Today"),
         TaskUiModel("Sync offline edits", "Waiting"),
@@ -57,6 +65,7 @@ private fun OrbitTasksApp() {
             ) {
                 Text("OrbitTasks", style = MaterialTheme.typography.headlineMedium)
                 Text("Compose showcase fixture for skills and CI.")
+                Text("Automation-ready filter labels keep emulator scripts stable.")
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     listOf("All", "Due", "Blocked").forEach { label ->
                         FilterChip(
@@ -64,6 +73,29 @@ private fun OrbitTasksApp() {
                             onClick = { selectedFilter.value = label },
                             label = { Text(label) },
                         )
+                    }
+                }
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        AsyncImage(
+                            model = R.drawable.release_avatar,
+                            contentDescription = "Team avatar for release readiness",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .size(64.dp)
+                                .clip(androidx.compose.foundation.shape.CircleShape)
+                                .background(MaterialTheme.colorScheme.surfaceVariant),
+                        )
+                        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            Text("Release readiness crew", style = MaterialTheme.typography.titleMedium)
+                            Text("Stable Coil-backed avatar surface for screenshot and automation coverage.")
+                        }
                     }
                 }
                 Card(modifier = Modifier.fillMaxWidth()) {
@@ -76,7 +108,7 @@ private fun OrbitTasksApp() {
                     }
                 }
                 LazyColumn(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    items(tasks) { task ->
+                    items(tasks, key = { it.title }) { task ->
                         Card(
                             modifier = Modifier
                                 .fillMaxWidth()

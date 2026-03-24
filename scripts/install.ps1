@@ -42,6 +42,18 @@ switch ($agent) {
       Copy-Item -Force (Join-Path $root ".cursor/rules\$skill.mdc") $target
     }
   }
+  "github" {
+    if ($scope -ne "project") {
+      throw "GitHub install supports project scope only."
+    }
+    $target = Join-Path (Get-Location) ".github/skills"
+    New-Item -ItemType Directory -Force -Path $target | Out-Null
+    if ($skill -eq "all") {
+      Copy-Item -Recurse -Force (Join-Path $root ".github/skills\*") $target
+    } else {
+      Copy-Item -Recurse -Force (Join-Path $root ".github/skills\$skill") $target
+    }
+  }
   default {
     throw "Unsupported agent: $agent"
   }

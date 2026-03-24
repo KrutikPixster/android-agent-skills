@@ -36,9 +36,19 @@ def build_cursor(root: Path, skills: list[dict]) -> None:
     shutil.copytree(root / '.cursor', dist / '.cursor')
 
 
+def build_github(root: Path, skills: list[dict]) -> None:
+    del skills
+    target = root / '.github' / 'skills'
+    ensure_clean_dir(target)
+    shutil.copytree(root / 'skills', target, dirs_exist_ok=True)
+    dist = root / 'dist' / 'github'
+    ensure_clean_dir(dist)
+    shutil.copytree(root / '.github', dist / '.github')
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description='Generate agent-specific outputs from canonical skills.')
-    parser.add_argument('--agent', choices=['codex', 'claude', 'cursor', 'all'], required=True)
+    parser.add_argument('--agent', choices=['codex', 'claude', 'cursor', 'github', 'all'], required=True)
     args = parser.parse_args()
 
     root = repo_root()
@@ -49,6 +59,8 @@ def main() -> int:
         build_claude(root, skills)
     if args.agent in {'cursor', 'all'}:
         build_cursor(root, skills)
+    if args.agent in {'github', 'all'}:
+        build_github(root, skills)
     print(f'Generated adapters for {args.agent}')
     return 0
 

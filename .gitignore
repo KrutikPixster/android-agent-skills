@@ -13,3 +13,5 @@ local.properties
 dist/
 benchmarks/last_eval.json
 .preview/
+__pycache__/
+**/__pycache__/

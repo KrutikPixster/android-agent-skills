@@ -288,3 +288,63 @@
 {"expected": "android-modernization-upgrade", "prompt": "What is the best way to approach upgrade old android project without drifting into neighboring skills?"}
 {"expected": "android-modernization-upgrade", "prompt": "I have a messy Android project and need help with fix android build after agp or kotlin bump today."}
 {"expected": "android-modernization-upgrade", "prompt": "Give me the Android-specific checklist for replace deprecated android classes."}
+{"expected": "android-emulator-automation", "prompt": "I need help with android emulator automation in a large Android codebase."}
+{"expected": "android-emulator-automation", "prompt": "Can you handle adb semantic ui automation for my mobile app?"}
+{"expected": "android-emulator-automation", "prompt": "Please review uiautomator dump and tap and give me the right Android workflow."}
+{"expected": "android-emulator-automation", "prompt": "My team needs launch android app and inspect screen before release."}
+{"expected": "android-emulator-automation", "prompt": "We are blocked on android agent tap text on emulator and need a deterministic fix."}
+{"expected": "android-emulator-automation", "prompt": "Use the android-emulator-automation skill for this Android request."}
+{"expected": "android-emulator-automation", "prompt": "This request is about use semantic adb and uiautomator workflows to inspect, launch, and interact with android apps from agents."}
+{"expected": "android-emulator-automation", "prompt": "What is the best way to approach android emulator automation without drifting into neighboring skills?"}
+{"expected": "android-emulator-automation", "prompt": "I have a messy Android project and need help with adb semantic ui automation today."}
+{"expected": "android-emulator-automation", "prompt": "Give me the Android-specific checklist for uiautomator dump and tap."}
+{"expected": "android-gradle-build-performance", "prompt": "I need help with android gradle build performance in a large Android codebase."}
+{"expected": "android-gradle-build-performance", "prompt": "Can you handle configuration cache android build for my mobile app?"}
+{"expected": "android-gradle-build-performance", "prompt": "Please review ksp vs kapt android and give me the right Android workflow."}
+{"expected": "android-gradle-build-performance", "prompt": "My team needs slow gradle build in android before release."}
+{"expected": "android-gradle-build-performance", "prompt": "We are blocked on ci build cache diagnosis android and need a deterministic fix."}
+{"expected": "android-gradle-build-performance", "prompt": "Use the android-gradle-build-performance skill for this Android request."}
+{"expected": "android-gradle-build-performance", "prompt": "This request is about diagnose and improve android and gradle build performance with scans, cache checks, and bottleneck audits."}
+{"expected": "android-gradle-build-performance", "prompt": "What is the best way to approach android gradle build performance without drifting into neighboring skills?"}
+{"expected": "android-gradle-build-performance", "prompt": "I have a messy Android project and need help with configuration cache android build today."}
+{"expected": "android-gradle-build-performance", "prompt": "Give me the Android-specific checklist for ksp vs kapt android."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "I need help with rxjava to coroutines android in a large Android codebase."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "Can you handle observable to flow android for my mobile app?"}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "Please review replace composite disposable android and give me the right Android workflow."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "My team needs single maybe completable migration android before release."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "We are blocked on scheduler to dispatcher android and need a deterministic fix."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "Use the android-rxjava-to-coroutines-migration skill for this Android request."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "This request is about migrate android rxjava code to kotlin coroutines and flow with safe lifecycle-aware replacements."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "What is the best way to approach rxjava to coroutines android without drifting into neighboring skills?"}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "I have a messy Android project and need help with observable to flow android today."}
+{"expected": "android-rxjava-to-coroutines-migration", "prompt": "Give me the Android-specific checklist for replace composite disposable android."}
+{"expected": "android-coil-compose", "prompt": "I need help with coil compose image loading in a large Android codebase."}
+{"expected": "android-coil-compose", "prompt": "Can you handle asyncimage android compose for my mobile app?"}
+{"expected": "android-coil-compose", "prompt": "Please review rememberasyncimagepainter android and give me the right Android workflow."}
+{"expected": "android-coil-compose", "prompt": "My team needs compose image placeholder error android before release."}
+{"expected": "android-coil-compose", "prompt": "We are blocked on coil lazycolumn performance android and need a deterministic fix."}
+{"expected": "android-coil-compose", "prompt": "Use the android-coil-compose skill for this Android request."}
+{"expected": "android-coil-compose", "prompt": "This request is about use coil in jetpack compose with asyncimage, painter variants, sizing, and accessible image loading patterns."}
+{"expected": "android-coil-compose", "prompt": "What is the best way to approach coil compose image loading without drifting into neighboring skills?"}
+{"expected": "android-coil-compose", "prompt": "I have a messy Android project and need help with asyncimage android compose today."}
+{"expected": "android-coil-compose", "prompt": "Give me the Android-specific checklist for compose image placeholder error android."}
+{"expected": "android-testing-ui", "prompt": "I need help with roborazzi screenshot test android in a large Android codebase."}
+{"expected": "android-testing-ui", "prompt": "Can you handle visual regression android ui for my mobile app?"}
+{"expected": "android-testing-ui", "prompt": "Give me the Android-specific checklist for screenshot baseline verification in compose."}
+{"expected": "android-mobile-frontend-design", "prompt": "I need help with android mobile frontend design in a large Android codebase."}
+{"expected": "android-mobile-frontend-design", "prompt": "Can you handle create screen from scratch for my mobile app?"}
+{"expected": "android-mobile-frontend-design", "prompt": "Please review redesign existing screen visually and give me the right Android workflow."}
+{"expected": "android-mobile-frontend-design", "prompt": "My team needs fix clipped cropped truncated ui before release."}
+{"expected": "android-mobile-frontend-design", "prompt": "We are blocked on localization safe mobile ui and need a deterministic fix."}
+{"expected": "android-mobile-frontend-design", "prompt": "Use the android-mobile-frontend-design skill for this Android request."}
+{"expected": "android-mobile-frontend-design", "prompt": "This request is about design android mobile frontend experiences from scratch, improve existing screens, and fix ui issues with brand-forward, localization-safe, overflow-safe guidance across compose and views."}
+{"expected": "android-mobile-frontend-design", "prompt": "What is the best way to approach rtl safe mobile ui without drifting into neighboring skills?"}
+{"expected": "android-mobile-frontend-design", "prompt": "I have a messy Android project and need help with brand forward mobile screen design today."}
+{"expected": "android-mobile-frontend-design", "prompt": "Give me the Android-specific checklist for fix clipped, cropped, or truncated UI on mobile."}
+{"expected": "android-mobile-frontend-design", "prompt": "Create a brand-forward Android screen from scratch that survives localization, keyboard insets, and narrow widths."}
+{"expected": "android-mobile-frontend-design", "prompt": "Improve an existing Android screen so long translated strings, RTL, and overflow no longer break the design."}
+{"expected": "android-mobile-frontend-design", "prompt": "Make this screen feel premium and memorable without hurting usability."}
+{"expected": "android-mobile-frontend-design", "prompt": "Give this app a world class mobile frontend design pass with better spacing and motion."}
+{"expected": "android-mobile-frontend-design", "prompt": "Make the task board visually stunning but still accessible and touch friendly on Android."}
+{"expected": "android-mobile-frontend-design", "prompt": "Polish this Android screen for RTL, localization, dynamic type, and overflow safety."}
+{"expected": "android-mobile-frontend-design", "prompt": "Improve hierarchy spacing and motion in Android UI so it feels high-end instead of generic."}

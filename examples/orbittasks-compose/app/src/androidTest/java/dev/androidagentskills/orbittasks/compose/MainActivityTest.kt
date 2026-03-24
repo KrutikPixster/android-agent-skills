@@ -2,6 +2,7 @@ package dev.androidagentskills.orbittasks.compose
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import org.junit.Rule
 import org.junit.Test
@@ -14,5 +15,6 @@ class MainActivityTest {
     fun shows_key_copy() {
         rule.onNodeWithText("OrbitTasks").assertIsDisplayed()
         rule.onNodeWithText("Reminder readiness").assertIsDisplayed()
+        rule.onNodeWithContentDescription("Team avatar for release readiness").assertIsDisplayed()
     }
 }

@@ -3,22 +3,30 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter, defaultdict
 
 from skill_lib import load_skills, repo_root
 
 
+def tokenize(text: str) -> list[str]:
+    return re.findall(r'[a-z0-9]+', text.lower())
+
+
 def score(prompt: str, skill: dict) -> int:
     prompt_l = prompt.lower()
+    prompt_tokens = set(tokenize(prompt_l))
     total = 0
+    if skill['slug'].lower() in prompt_l:
+        total += 12
     for phrase in skill['metadata']['triggers']['include']:
         phrase_l = phrase.lower()
         if phrase_l in prompt_l:
             total += 8
         else:
-            total += sum(1 for token in phrase_l.split() if token in prompt_l)
+            total += sum(1 for token in tokenize(phrase_l) if token in prompt_tokens)
     for token in skill['slug'].split('-'):
-        if token in prompt_l:
+        if token in prompt_tokens:
             total += 1
     for phrase in skill['metadata']['triggers']['exclude']:
         if phrase.lower() in prompt_l:

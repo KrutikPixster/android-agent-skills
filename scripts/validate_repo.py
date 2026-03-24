@@ -1,19 +1,35 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import filecmp
 import json
 
 from skill_lib import load_skills, render_agents_catalog, render_claude_agent, render_cursor_rule, repo_root
 from validate_skill import validate
 
-EXPECTED_COUNT = 29
+EXPECTED_COUNT = 34
 REQUIRED_FIXTURES = [
     'examples/orbittasks-compose',
     'examples/orbittasks-xml',
     'examples/fixtures/legacy-support-app',
     'examples/fixtures/legacy-mismatch-app',
     'examples/fixtures/native-misaligned-app',
+    'examples/fixtures/rxjava-legacy-sample',
 ]
+
+
+def compare_dirs(left: str, right: str) -> list[str]:
+    diff = filecmp.dircmp(left, right)
+    errors: list[str] = []
+    for rel in diff.left_only:
+        errors.append(f'missing from mirror: {right}/{rel}')
+    for rel in diff.right_only:
+        errors.append(f'extra file in mirror: {right}/{rel}')
+    for rel in diff.diff_files:
+        errors.append(f'content drift: {right}/{rel}')
+    for subdir in diff.common_dirs:
+        errors.extend(compare_dirs(f'{left}/{subdir}', f'{right}/{subdir}'))
+    return errors
 
 
 def main() -> int:
@@ -43,6 +59,18 @@ def main() -> int:
         path = cursor_dir / f"{skill['slug']}.mdc"
         if not path.exists() or path.read_text(encoding='utf-8') != render_cursor_rule(skill):
             errors.append(f'Cursor adapter drift: {path}')
+
+    github_dir = root / '.github' / 'skills'
+    if not github_dir.exists():
+        errors.append('GitHub skills export is missing; run python3 scripts/build_adapters.py --agent github')
+    else:
+        for skill in skills:
+            source_dir = root / 'skills' / skill['slug']
+            mirror_dir = github_dir / skill['slug']
+            if not mirror_dir.exists():
+                errors.append(f'GitHub mirror missing: {mirror_dir}')
+                continue
+            errors.extend(compare_dirs(str(source_dir), str(mirror_dir)))
 
     prompt_counts: dict[str, int] = {}
     prompts_path = root / 'benchmarks' / 'triggers.jsonl'

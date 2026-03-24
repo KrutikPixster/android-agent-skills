@@ -1,6 +1,6 @@
 ---
 name: android-testing-ui
-description: Validate Android UI behavior with Compose UI tests, Espresso-style checks, accessibility assertions, and state coverage.
+description: Validate Android UI behavior with Compose UI tests, Espresso-style checks, screenshot assertions, and accessibility verification.
 ---
 
 # android-testing-ui

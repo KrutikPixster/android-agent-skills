@@ -108,6 +108,7 @@ def render_agents_catalog(skills: list[dict[str, Any]]) -> str:
         '- Codex / open standard: root `skills/` plus this `AGENTS.md` catalog.',
         '- Claude Code: generated `.claude/agents/` files.',
         '- Cursor: generated `.cursor/rules/` files.',
+        '- GitHub Copilot / workspace agents: generated `.github/skills/` skill mirrors.',
         '',
     ]
     for category in CATEGORY_LABELS:

@@ -31,9 +31,21 @@
     "android-state-management",
     "android-workmanager-notifications"
   ],
+  "android-coil-compose": [
+    "android-compose-foundations",
+    "android-compose-performance"
+  ],
   "android-di-hilt": [
     "android-testing-unit",
     "android-networking-retrofit-okhttp"
+  ],
+  "android-emulator-automation": [
+    "android-testing-ui",
+    "android-permissions-activity-results"
+  ],
+  "android-gradle-build-performance": [
+    "android-gradle-build-logic",
+    "android-ci-cd-release-playstore"
   ],
   "android-gradle-build-logic": [
     "android-modernization-upgrade",
@@ -50,6 +62,10 @@
   "android-material3-design-system": [
     "android-compose-foundations",
     "android-compose-accessibility"
+  ],
+  "android-mobile-frontend-design": [
+    "android-compose-foundations",
+    "android-material3-design-system"
   ],
   "android-media-files-sharing": [
     "android-permissions-activity-results",
@@ -82,6 +98,10 @@
   "android-room-database": [
     "android-local-persistence-datastore",
     "android-testing-unit"
+  ],
+  "android-rxjava-to-coroutines-migration": [
+    "android-coroutines-flow",
+    "android-modernization-upgrade"
   ],
   "android-security-best-practices": [
     "android-modernization-upgrade",

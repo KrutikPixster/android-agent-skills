@@ -6,14 +6,14 @@ Android skills for people shipping real apps.
 
 Kotlin. Compose. XML. Release work. Ugly legacy upgrades.
 
-An Android skills repository for Codex, Claude Code, and Cursor.
+An Android skills repository for Codex, Claude Code, Cursor, and GitHub Copilot-style workspace skill loading.
 
 ## What makes it useful
-- `29` skills built around the jobs Android teams actually do.
+- `34` skills built around the jobs Android teams actually do.
 - One source of truth in `skills/`.
 - Real fixture apps you can build, test, lint, and extend.
 - A serious rescue path for old apps through `android-modernization-upgrade`.
-- Generated outputs for Codex, Claude Code, and Cursor.
+- Generated outputs for Codex, Claude Code, Cursor, and GitHub Copilot-style `.github/skills` consumers.
 
 ## Plug it in
 
@@ -41,6 +41,14 @@ An Android skills repository for Codex, Claude Code, and Cursor.
 ```
 </details>
 
+<details>
+<summary>GitHub Copilot / Workspace Agents</summary>
+
+```bash
+./scripts/install.sh --agent github --scope project --skill all
+```
+</details>
+
 ## Pick the job
 
 Find the problem. Grab the skill. Move.
@@ -59,6 +67,8 @@ Find the problem. Grab the skill. Move.
 | `android-permissions-activity-results` | Use modern permission requests, Activity Result APIs, and capability-gated UX in Android flows | `product` |
 | `android-ui-states-validation` | Review Android UI flows for empty, loading, error, offline, and edge-case behavior before release | `product` |
 | `android-compose-foundations` | Build Android UI with Jetpack Compose foundations, layouts, modifiers, theming, and stable component structure | `ui` |
+| `android-mobile-frontend-design` | Design Android mobile screens from scratch, improve existing ones, and fix UI issues with brand-forward, localization-safe, overflow-safe guidance across Compose and Views | `ui` |
+| `android-coil-compose` | Use Coil in Jetpack Compose with AsyncImage, painter variants, sizing, and accessible image loading patterns | `ui` |
 | `android-compose-state-effects` | Manage Compose state, remember APIs, side effects, snapshots, and lifecycle-aware collection without leaks or loops | `ui` |
 | `android-material3-design-system` | Apply Material 3 tokens, color, type, spacing, adaptive components, and theme ownership in Android apps | `ui` |
 | `android-compose-performance` | Profile and improve Compose recomposition, layout, scrolling, startup, and rendering performance in Android apps | `ui` |
@@ -71,23 +81,27 @@ Find the problem. Grab the skill. Move.
 | `android-serialization-offline-sync` | Coordinate serialization, caching, conflict handling, and offline-first sync flows in Android apps | `data-platform` |
 | `android-media-files-sharing` | Use modern Android file, media, picker, FileProvider, and share-sheet APIs with minimal permissions | `data-platform` |
 | `android-workmanager-notifications` | Schedule reliable background work, reminders, and notification delivery with WorkManager and Android execution limits | `data-platform` |
+| `android-emulator-automation` | Use semantic ADB and UIAutomator workflows to inspect, launch, and interact with Android apps from agents | `quality-release` |
+| `android-gradle-build-performance` | Diagnose and improve Android and Gradle build performance with scans, cache checks, and bottleneck audits | `quality-release` |
 | `android-security-best-practices` | Apply Android app security guidance around secrets, storage, network trust, exported components, and least privilege | `quality-release` |
 | `android-performance-observability` | Measure startup, rendering, memory, jank, vitals, logs, and crash signals for Android apps with actionable traces | `quality-release` |
 | `android-testing-unit` | Write fast, focused Android unit tests for reducers, use cases, repositories, and lifecycle-safe state holders | `quality-release` |
-| `android-testing-ui` | Validate Android UI behavior with Compose UI tests, Espresso-style checks, accessibility assertions, and state coverage | `quality-release` |
+| `android-testing-ui` | Validate Android UI behavior with Compose UI tests, Espresso-style checks, Roborazzi screenshot verification, accessibility assertions, and state coverage | `quality-release` |
 | `android-ci-cd-release-playstore` | Automate Android CI, versioning, signing boundaries, release channels, and Play-ready delivery workflows | `quality-release` |
 | `android-modernization-upgrade` | Bring very old Android projects to a current supported baseline with staged upgrades, deprecated API replacement, 16 KB alignment checks, and explicit handoff to specialized skills | `legacy-rescue` |
+| `android-rxjava-to-coroutines-migration` | Migrate Android RxJava code to Kotlin coroutines and Flow with safe lifecycle-aware replacements | `legacy-rescue` |
 
 ## Real fixtures
 - `examples/orbittasks-compose` gives you a Compose-first app with filters, reminders, sync state, and test hooks.
 - `examples/orbittasks-xml` gives you the View-system version with ViewBinding and migration-ready structure.
 - `examples/fixtures/*` keeps broken legacy projects around on purpose so the upgrade skill has something real to rescue.
+- `examples/fixtures/rxjava-legacy-sample` gives the migration skill a deterministic RxJava codebase to scan and checklist.
 
 ## Already wired up
 - `python3 scripts/validate_repo.py`
 - `python3 scripts/eval_triggers.py`
 - `python3 scripts/build_adapters.py --agent all`
-- GitHub Actions for validation, packaging smoke tests, and Android fixture checks.
+- GitHub Actions for validation, packaging smoke tests, screenshot verification, emulator smoke tests, and Android fixture checks.
 
 ## Add a new skill
 ```bash
@@ -99,6 +113,7 @@ python3 scripts/build_adapters.py --agent all
 ## Repo layout
 ```text
 skills/                    Canonical skill sources
+.github/skills/            Generated GitHub Copilot/workspace skill mirrors
 .claude/agents/            Generated Claude adapters
 .cursor/rules/             Generated Cursor rules
 examples/                  Compose, XML, and legacy-upgrade fixtures
