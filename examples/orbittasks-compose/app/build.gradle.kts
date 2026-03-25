@@ -29,6 +29,9 @@ android {
   testOptions {
     unitTests.isIncludeAndroidResources = true
     unitTests.isReturnDefaultValues = true
+    unitTests.all {
+      it.systemProperties["robolectric.pixelCopyRenderMode"] = "hardware"
+    }
   }
 }
 
